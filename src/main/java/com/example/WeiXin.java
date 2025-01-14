@@ -26,7 +26,7 @@ public class WeiXin {
         for (int i = 0; i < repeat; i++) {
             mouseMove(1200,1120);
             clickA(InputEvent.BUTTON1_DOWN_MASK);
-            String info = "woaizg";
+            String info = "ai";
             for (char c :info.toCharArray()) {
                 clickB(KeyEvent.getExtendedKeyCodeForChar(c));
             }

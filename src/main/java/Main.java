@@ -1,9 +1,9 @@
-import com.example.WeiXin;
+import com.example.MingChaoYiCaiHua;
 
 
 public class Main {
     public static void main(String[] args) {
-        WeiXin weiXin = new WeiXin(1.5); // 缩放比例
-        weiXin.run(5000, 3);
+        MingChaoYiCaiHua mingChaoYiCaiHua = new MingChaoYiCaiHua(2);
+        mingChaoYiCaiHua.run(true);
     }
 }
