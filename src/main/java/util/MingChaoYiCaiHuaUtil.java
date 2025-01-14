@@ -165,10 +165,12 @@ public class MingChaoYiCaiHuaUtil { // 鸣潮溢彩画工具类
             }
         }
         dfs(g, k, target, step, path, total);
-        System.out.println("枚举点击次数：" + cnt);
-        System.out.println("可行解：");
-        for (int[] p: path) {
-            System.out.println("(" + (p[0] + 1) + ", " + (p[1] + 1) + ")" + " -> " + (p[2] + 1));
+        if (!path.isEmpty()) {
+            System.out.println("枚举点击次数：" + cnt);
+            System.out.println("可行解：");
+            for (int[] p: path) {
+                System.out.println("(" + (p[0] + 1) + ", " + (p[1] + 1) + ")" + " -> " + (p[2] + 1));
+            }
         }
         return path;
     }

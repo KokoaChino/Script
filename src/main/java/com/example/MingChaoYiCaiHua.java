@@ -96,20 +96,23 @@ public class MingChaoYiCaiHua { // 鸣潮溢彩画
         } else {
             robot.delay(DELAY * 1000);
             init();
-            System.out.println("private int[][] g = { // 画板");
-            for (int i = 0; i < g.length; i++) {
-                System.out.print("\t{ ");
-                for (int j = 0; j < g[i].length - 1; j++) {
-                    System.out.print(g[i][j] + ", ");
+            List<int[]> path = MingChaoYiCaiHuaUtil.calculationPath(g, n, target, step);
+            if (path.isEmpty()) {
+                System.out.println("private int[][] g = { // 画板");
+                for (int i = 0; i < g.length; i++) {
+                    System.out.print("\t{ ");
+                    for (int j = 0; j < g[i].length - 1; j++) {
+                        System.out.print(g[i][j] + ", ");
+                    }
+                    System.out.println(g[i][g[i].length - 1] + " }" + (i == g.length - 1 ? "\n};" : ","));
                 }
-                System.out.println(g[i][g[i].length - 1] + " }" + (i == g.length - 1 ? "\n};" : ","));
-            }
-            String s = String.format("""
+                String s = String.format("""
                 private final int step = 4; // 步数
                 private int n = %d; // 颜色种数
                 private int target = %d; // 目标颜色
                                 """, n, target);
-            System.out.println(s);
+                System.out.println(s);
+            }
         }
     }
 
